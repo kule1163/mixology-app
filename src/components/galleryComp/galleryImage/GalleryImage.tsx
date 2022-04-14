@@ -38,7 +38,7 @@ const GalleryImage = () => {
                 })
             }
         })
-    })
+    }, [])
 
     return (
         <MainContainer ref={refCont}>

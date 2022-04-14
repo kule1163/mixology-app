@@ -1,8 +1,6 @@
 import React, {useRef, useEffect} from 'react'
-import { InfoBox, InfoContainer, MainContainer, ItemBox } from './styles'
-import { Mixology, Header, } from "../../homeComp/experience/styles"
+import { InfoBox, InfoContainer, ItemBox } from './styles'
 import Visky from "../../../assets/viskyman.jpg"
-import { SectionContainer, } from '../../contact/styles'
 import { contacts } from '../../../utils/contacts'
 import { Typography } from '@mui/material'
 import gsap from "gsap"
@@ -21,9 +19,9 @@ const Info = () => {
         }})
         gsap.fromTo(containerRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
         trigger: containerRef.current,
-        start: "30% bottom",
+        start: "20% bottom",
         }})
-    })
+    }, [])
 
     return (
         <InfoContainer ref={containerRef}>

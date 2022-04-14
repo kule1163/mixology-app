@@ -1,6 +1,6 @@
 import React from 'react'
-import { useForm, FormProvider, useFormContext } from "react-hook-form";
-import { FormBox, FormMiddleBox, Input, TextArea } from '../../reserveComp/visitUs/styles'
+import { useForm, FormProvider } from "react-hook-form";
+import { FormBox, TextArea } from '../../reserveComp/visitUs/styles'
 import { Header, Text } from "../../homeComp/experience/styles";
 import { ButtonPrimary } from '../../homeComp/cocktails/styles';
 import { FormInput } from '../../reserveComp/visitUs/Forum';
@@ -47,8 +47,6 @@ const CommentForm = () => {
                         </label>
                         <FormInput required={true} type="text" id="website" name="website" />
                     </FormBox>
- 
-                  
                     <ButtonPrimary type='submit'>POST COMMENT</ButtonPrimary>
                 </FormContainer>
             </form>

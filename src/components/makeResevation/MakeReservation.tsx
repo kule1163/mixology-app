@@ -19,24 +19,20 @@ const MakeReservation = () => {
   useEffect(() => {
     gsap.fromTo(sectionRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
       trigger: sectionRef.current,
-      start: "30% bottom",
+      start: "20% bottom",
  
     }})
     gsap.fromTo(contentRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
       trigger: contentRef.current,
-      start: "30% bottom",
+      start: "20% bottom",
 
     }})
-  })
+  }, [])
 
 
   const ref = useRef<HTMLDivElement>(null)
   
-
-  const handleClick = (/* e: React.MouseEvent<HTMLDivElement, MouseEvent> */id:string) => {
-    /* const currentEvent = e.target as HTMLDivElement */
-    console.log(id);
-    console.log(currentID);
+  const handleClick = (id:string) => {
     if(id === currentID) {
       setCurrentID("")
     }

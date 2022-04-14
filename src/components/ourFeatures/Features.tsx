@@ -1,8 +1,7 @@
 import { Typography } from '@mui/material'
-import React, {useRef, useEffect} from 'react'
+import React, {useRef } from 'react'
 import { ButtonPrimary } from '../homeComp/cocktails/styles'
 import { MainContainer } from './styles'
-import AboutUs from "../../assets/aboutUs.jpg"
 import gsap from "gsap"
 import { useNavigate } from 'react-router-dom'
 
@@ -17,6 +16,7 @@ const Features = ({buttonText, header, background, path}: FeaturesProps) => {
   
   const ref = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   const navigate = useNavigate()
   
@@ -39,8 +39,8 @@ const Features = ({buttonText, header, background, path}: FeaturesProps) => {
   return (
     <MainContainer onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} ref={ref} background={background}>
         <div ref={contentRef} style={{ overflow: "hidden", display: "inline-flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-          <Typography  sx={{color: "white"}} variant="h4">{header}</Typography>
-          <ButtonPrimary onClick={handleClick}>{buttonText}</ButtonPrimary>
+          <Typography sx={{color: "white", cursor: "default"}} variant="h4">{header}</Typography>
+          <ButtonPrimary style={{visibility: "visible"}} onClick={handleClick}>{buttonText}</ButtonPrimary>
         </div>
     </MainContainer>
   )

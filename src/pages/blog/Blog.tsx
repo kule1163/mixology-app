@@ -2,9 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import PageHeader from '../../components/pageHeader/PageHeader'
 import { Container, Label, MainContainer, ReadMore, SectionContainer, SingleItemBox } from './styles'
 import BlogImage from "../../assets/barwomen.jpg"
-import BlogPhoto from "../../assets/blog1.jpg"
 import { Header,Text } from '../../components/homeComp/experience/styles'
-import { ButtonPrimary } from '../../components/homeComp/cocktails/styles'
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { blogItems } from '../../utils/blogItems'
 import gsap from "gsap"
@@ -42,7 +40,7 @@ const Blog = () => {
         start: "20% bottom",
       }})
     })
-  })
+  }, [])
   
   return (
     <MainContainer>

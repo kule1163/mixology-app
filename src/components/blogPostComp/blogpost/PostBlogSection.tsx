@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FirstSectionBox, MainContainer, ComponentDisplay, ComponentContainer, ButtonContainer, ButtonBox, PrevBox, NextBox, HeaderText, TextBox, ButtonText } from './styles'
+import {  MainContainer, ButtonContainer, PrevBox, NextBox, HeaderText, TextBox, ButtonText } from './styles'
 import { blogPageItems } from '../../../utils/blogPageItems'
 import { IoIosArrowForward } from 'react-icons/io';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -13,7 +13,6 @@ const PostBlogSection = () => {
 
   const post = useAppSelector(state => state.cocktail.post)
 
-  const [currentIndex, setCurrentIndex] = useState<number>(1)
   const [header, setHeader] = useState<string>(post.length > 0 ? post : "Our Barman’s secret tips")
 
   const currentItem = blogPageItems.find(item => item.header === header)
@@ -33,10 +32,7 @@ const PostBlogSection = () => {
           <PrevBox onClick={() => {
             setHeader(prevBlogItem)
             window.scrollTo(0, 0)
-            setCurrentIndex(c)
           }} className='button'>
-
-
             <IoIosArrowBack className='icon' />
             <TextBox>
               <ButtonText>PREVIOUS</ButtonText>
@@ -45,7 +41,6 @@ const PostBlogSection = () => {
                 {prevBlogItem}
               </HeaderText>
             </TextBox>
-
           </PrevBox>
         )}
 
@@ -53,9 +48,7 @@ const PostBlogSection = () => {
           <NextBox onClick={() => {
             setHeader(nextBlogItem)
             window.scrollTo(0, 0)
-            setCurrentIndex(c)
           }} className='button'>
-
             <TextBox>
               <ButtonText>NEXT</ButtonText>
               <HeaderText

@@ -4,7 +4,6 @@ import { MainContainer,HeaderBox,ItemBox,Line,SectionContainer } from './styles'
 import { SingleBarItem } from '../../../utils/menuItems';
 import gsap from "gsap"
 
-
 interface BarMenuItemProps {
     mixology: string;
     header: string;
@@ -15,21 +14,12 @@ interface BarMenuItemProps {
 const BarMenuItem = ({mixology, header, list, background}: BarMenuItemProps) => {
     const ref = useRef<HTMLDivElement>(null)
 
-    const revealRefs = useRef<HTMLDivElement[]>([])
-    revealRefs.current = []
-
-    const addToRef = (el:HTMLDivElement) => {
-        if(el && !revealRefs.current.includes(el)) {
-            revealRefs.current.push(el)
-        }
-    }
-
     useEffect(() => {
         gsap.fromTo(ref.current, {opacity:0, autoAlpha: 0}, {opacity: 1, autoAlpha:1, duration: 2, scrollTrigger: {
             trigger: ref.current,
-            start: "30% bottom",
+            start: "20% bottom",
         }})
-    })
+    },[])
   
     return (
     <MainContainer background={background}>
@@ -37,7 +27,6 @@ const BarMenuItem = ({mixology, header, list, background}: BarMenuItemProps) => 
         <Mixology sx={{textAlign: "center !important"}}>{mixology}</Mixology>
         <Header variant='h3'>{header}</Header>
         <SectionContainer>
-            
             {list.map(item => (
                 <ItemBox key={item.id}>
                 <HeaderBox>

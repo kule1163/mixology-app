@@ -1,12 +1,10 @@
 import React, {useRef, useEffect} from 'react'
 import styled from 'styled-components'
-
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Typography } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-
 
 const MainContainer = styled.div`
     display: flex;
@@ -19,17 +17,12 @@ interface ImageContainerProps {
 }
 const ImageContainer = styled.div<ImageContainerProps>`
     position: relative;
-    /* background-image: url(${props => props.image}); */
-    /* background-position: center;
-    background-size: cover; */
-    height: 45vh;
     width: 100%;
     
     & img {
         object-fit: cover;
         width: 100%;
         height: 45vh;
-        /* visibility:hidden;  */
     }; 
     &:after {
         position: absolute;
@@ -63,8 +56,6 @@ const PageHeader = ({image, header}: PageHeaderProps) => {
             trigger:ref.current,
             scrub: 1,
             start: "top top",
-            /* start: "top bottom",
-            end: "bottom top", */
             toggleActions: "restart complete complete reverse"
         }})
         gsap.fromTo(imageRef.current, {autoAlpha: 0, opacity: 0}, {autoAlpha: 1, opacity: 1, duration: 2})
@@ -73,16 +64,13 @@ const PageHeader = ({image, header}: PageHeaderProps) => {
   
     return (
   <MainContainer ref={ref}>
-        <ImageContainer   /* image={image} */>
-        {/* <img ref={imageRef} src={image}/> */}
-        {/* <div style={{visibility: "hidden"}} ref={dRef}> */}
+        <ImageContainer >
             <LazyLoadImage 
                 src={image}
                 effect="blur"
                 width="100%"
                 height="100%"
             />
-        {/* </div> */}
     </ImageContainer>
     <div ref={headerRef} style={{marginTop: "1.5rem", zIndex: "10", position: "absolute", left: "50%", transform: "translateX(-50%)", bottom: "-2rem"}}>
         <Header style={{marginBottom: "0 !important"}} variant="h3">{header}</Header>

@@ -56,50 +56,44 @@ const DrinkSlider = () => {
     const revalRefs = useRef<HTMLDivElement[]>([])
     revalRefs.current = []
 
-    const addToRef = (el:HTMLDivElement) => {
-        if(el && !revalRefs.current.includes(el)) {
+    const addToRef = (el: HTMLDivElement) => {
+        if (el && !revalRefs.current.includes(el)) {
             revalRefs.current.push(el)
         }
     }
 
     useEffect(() => {
-        /* gsap.fromTo(ref.current, {backgroundPosition: "30% 30%"}, {backgroundPosition: "60% 60%", scrollTrigger: {
-            trigger: ref.current,
-            markers: true,
-            start: "top bottom",
-            scrub: true
-        }}) */
-        revalRefs.current.forEach((el:HTMLDivElement, index:number) => {
-            gsap.fromTo(el, {backgroundPositionY: "0", autoAlpha: 0}, {backgroundPositionY: "60%", autoAlpha: 1, scrollTrigger: {
-                id:`section-${index+1}`,
-                trigger: el,
-                start: "top bottom",
-                toggleActions: "restart complete complete reverse",
-                scrub: true
-            }}) 
+        revalRefs.current.forEach((el: HTMLDivElement, index: number) => {
+            gsap.fromTo(el, { backgroundPositionY: "0", autoAlpha: 0 }, {
+                backgroundPositionY: "60%", autoAlpha: 1, scrollTrigger: {
+                    id: `section-${index + 1}`,
+                    trigger: el,
+                    start: "top bottom",
+                    toggleActions: "restart complete complete reverse",
+                    scrub: true
+                }
+            })
         })
 
-    })
- 
+    }, [])
+
     return (
-    
-    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        {/* <MainContainer ref={ref}> */}
-        {comments.map(item => (
-            <SwiperSlide key={item.id}>
-                <MainContainer ref={addToRef}>
-                  
-                  <Typography style={{fontSize: "1.4em", marginBottom: "2rem"}}>{item.text}</Typography>
-                    <Typography style={{fontSize: "1em"}}>{item.name}</Typography>
-                    <Typography style={{fontSize: ".9em"}}>{item.role}</Typography>
-                
-                </MainContainer>
-            </SwiperSlide>
-        ))}
-        {/* </MainContainer> */}
-    </Swiper>
-  
-  )
+
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            {comments.map(item => (
+                <SwiperSlide key={item.id}>
+                    <MainContainer ref={addToRef}>
+
+                        <Typography style={{ fontSize: "1.4em", marginBottom: "2rem" }}>{item.text}</Typography>
+                        <Typography style={{ fontSize: "1em" }}>{item.name}</Typography>
+                        <Typography style={{ fontSize: ".9em" }}>{item.role}</Typography>
+
+                    </MainContainer>
+                </SwiperSlide>
+            ))}
+        </Swiper>
+
+    )
 }
 
 export default DrinkSlider

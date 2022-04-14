@@ -14,14 +14,14 @@ const Quality = () => {
   useEffect(() => {
     gsap.fromTo(contentRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
       trigger: contentRef.current,
-      start: "30% bottom",
+      start: "20% bottom",
     }})
     gsap.fromTo(sliderRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
       trigger: sliderRef.current,
-      start: "30% bottom",
+      start: "20% bottom",
 
     }})
-  })
+  }, [])
  
   
   return (

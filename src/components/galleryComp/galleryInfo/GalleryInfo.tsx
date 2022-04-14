@@ -20,7 +20,7 @@ const GalleryInfo = () => {
       trigger: refSlider.current,
       start: "top bottom",
     }})
-  })
+  }, [])
   
   return (
     <MainContainer>

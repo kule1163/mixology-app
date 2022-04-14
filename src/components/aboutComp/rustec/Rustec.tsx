@@ -20,17 +20,17 @@ const Rustec = () => {
         useEffect(() => {
             gsap.fromTo(ref.current, {y: 0}, {y: 100, scrollTrigger: {
                 trigger:ref.current,
-                scrub: 1,
+                scrub: true,
                 start: "80% bottom",
                 end: "bottom top",
                 toggleActions: "restart complete complete reverse"
             }})
             gsap.fromTo(rustecRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
                 trigger: rustecRef.current,
-                start: "30% bottom",
+                start: "20% bottom",
           
             }})
-        })
+        }, [])
 
     return (
         <MainCointer>

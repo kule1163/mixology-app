@@ -63,12 +63,6 @@ const Forum = () => {
             <FormInput required={true} type="time" id="time" name="time" />
           </FormBox>
           </FormMiddleBox>
-          {/* <FormBox>
-            <label htmlFor='comments'>
-              <Text>Comments</Text>
-            </label>
-            <FormInput type="text" id="comments" name="comments" />
-          </FormBox> */}
           <FormBox>
             <label htmlFor='comments'>
               <Text>Comments</Text>

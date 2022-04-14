@@ -23,11 +23,11 @@ const Contact = () => {
     useEffect(() => {
         gsap.fromTo(ref.current, {autoAlpha: 0}, {autoAlpha: 1, duration: 1, scrollTrigger: {
             trigger: ref.current,
-            start: "30% bottom"
+            start: "20% bottom"
         }})
         gsap.fromTo(contentRef.current, {autoAlpha: 0}, {autoAlpha: 1, duration: 1, scrollTrigger: {
             trigger: contentRef.current,
-            start: "30% bottom"
+            start: "20% bottom"
         }})
     }, [])
 

@@ -23,7 +23,7 @@ const Unforgotable = () => {
             trigger: contentRef.current,
             start: "20% bottom",
           }})
-    })
+    }, [])
 
     return (
     <MainCointer>

@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from 'react'
-import { MdOutlineSwapHorizontalCircle } from 'react-icons/md'
 import {MainCointer, ContentContainer, ImageBox, ContentBox, HeaderBox} from "../../homeComp/atension/styles"
 import { Header, Mixology, Text } from "../../homeComp/experience/styles"
 import Relax from "../../../assets/relax.jpg"
@@ -17,18 +16,18 @@ const SeatRelax = () => {
     useEffect(() => {
         gsap.fromTo(ref.current, {opacity:0, autoAlpha: 0}, {opacity: 1, autoAlpha:1, duration: 2, scrollTrigger: {
             trigger: ref.current,
-            start: "30% bottom",
+            start: "20% bottom",
         }})
         gsap.fromTo(contentRef.current, {opacity:0, autoAlpha: 0}, {opacity: 1, autoAlpha:1, duration: 2, scrollTrigger: {
             trigger: contentRef.current,
-            start: "30% bottom",
+            start: "20% bottom",
         }})
         gsap.fromTo(imageRef.current, {opacity:0, autoAlpha: 0}, {opacity: 1, autoAlpha:1, duration: 2, scrollTrigger: {
             trigger: imageRef.current,
-            start: "30% bottom",
+            start: "20% bottom",
         }})
 
-    })
+    }, [])
   
     return (
     <MainCointer>

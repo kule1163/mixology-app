@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material'
 import React, {useRef, useEffect} from 'react'
 import {MainContainer,Mixology,Header,Text, ContentBox, ExperienceBox} from "./styles"
 import Bar from  "../../../assets/bar.jpg"
@@ -22,10 +21,10 @@ const Experience = () => {
           start: "10% bottom",
       }})
 
-    })
+    }, [])
  
   return (
-    <MainContainer /* ref={ref} */>
+    <MainContainer>
         <ExperienceBox ref={contentRef}>
           <Mixology>MIXOLOGY</Mixology>
           <Header variant="h2">ENJOY THE EXPERIENCE</Header>

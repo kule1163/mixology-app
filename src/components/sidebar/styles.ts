@@ -10,11 +10,13 @@ export const MainContainer = styled.div`
     width: 350px;
     height: 100vh;
     background-color: rgba(178, 101, 0, .9);
- /*    z-index: 10; */
     & img {
         width: 75%;
         object-fit: cover;
         height: auto;
+    };
+    @media (max-height: 550px) {
+        overflow-y: auto;
     }
 `
 

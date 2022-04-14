@@ -6,7 +6,6 @@ export const MainContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: start;
-  /*   padding-block: 5rem; */
     & img {
         height: 70vh;
         width: 100%;
@@ -47,9 +46,11 @@ export const Mixology = styled(Typography)`
     font-size: 1.2em !important;
     color: #B26500;
     font-weight: bolder;
+    cursor: default;
 `
 export const Header = styled(Typography)`
     color: white;
+    cursor: default;
     text-align: center;
     margin-top: 1rem !important;
     margin-bottom: 2.5rem !important;
@@ -59,4 +60,5 @@ export const Text = styled(Typography)`
     color: white;
     text-align: center;
     font-size: 1.3em !important;
+    cursor: default;
 `

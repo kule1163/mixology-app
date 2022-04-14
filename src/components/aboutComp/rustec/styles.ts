@@ -10,8 +10,8 @@ export const ImageBox = styled.div`
         object-fit: cover;
     };
     & .box {
-        width: 370px;
-    height: 250px;
+        width: 400px;
+        height: 250px;
     };
     @media (max-width: 1200px) {
         display: none;
@@ -20,7 +20,7 @@ export const ImageBox = styled.div`
 export const BarBox = styled.div`
     position: absolute;
     right: -20px;
-    bottom: 300px;
+    bottom: 250px;
     z-index: 10;
 `
 export const WineBox = styled.div`

@@ -2,7 +2,6 @@ import React, {useRef, useEffect} from 'react'
 import {BUttonContainer,ImageContainer,MainContainer,} from "./styles"
 import BookNowPhoto from "../../../assets/booknow.jpg"
 import { Header, Text } from  "../../homeComp/experience/styles" 
-import { ButtonPrimary } from '../../homeComp/cocktails/styles'
 import { ButtonSecondry } from '../../../pages/about/styles'
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,7 +22,7 @@ const BookNow = () => {
       trigger: buttonRef.current,
       start: "center bottom",
     }})
-  })
+  }, [])
 
   return (
     <MainContainer ref={el}>

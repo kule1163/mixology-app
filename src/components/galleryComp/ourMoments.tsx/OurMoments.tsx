@@ -1,8 +1,6 @@
 import React, {useRef, useEffect} from 'react'
 import {MainContainer,Mixology,Header,Text, ContentBox} from "../../homeComp/experience/styles"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 
 const OurMoments = () => {
   const ref = useRef<HTMLDivElement>(null)
@@ -12,7 +10,7 @@ const OurMoments = () => {
       trigger: ref.current,
       start: "center bottom",
     }})
-  })
+  }, [])
 
   return (
     <MainContainer ref={ref}>

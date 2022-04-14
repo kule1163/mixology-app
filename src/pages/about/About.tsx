@@ -11,7 +11,6 @@ import Rustec from '../../components/aboutComp/rustec/Rustec'
 import Quality from '../../components/aboutComp/quality/Quality'
 import BookaTable from "../../assets/bookatable.jpg"
 import { Header } from '../../components/homeComp/experience/styles'
-import { ButtonPrimary } from '../../components/homeComp/cocktails/styles'
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from 'react-router-dom'
@@ -21,7 +20,6 @@ const About = () => {
   gsap.registerPlugin(ScrollTrigger)
 
   const navigate = useNavigate()
-
 
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
@@ -36,7 +34,7 @@ const About = () => {
     
     gsap.fromTo(buttonRef.current, {opacity:0, autoAlpha:0}, {opacity:1, autoAlpha: 1, duration: 2, scrollTrigger: {
       trigger: buttonRef.current,
-      start: "40% bottom",
+      start: "20% bottom",
 
     }})
     
@@ -74,9 +72,7 @@ const About = () => {
   return (
     <MainContainer>
         <PageHeader image={AboutImage} header="ABOUT"/>
-        
           <SeatRelax />
-        
         <FeaturesBox ref={el}>
           <LeftBox ref={leftRef}>
             <Features path='/reserve' header='Book a Table' buttonText="RESERVE" background={Reserve}/>
@@ -85,15 +81,11 @@ const About = () => {
             <Features path="/menu" header='Our Cocktails' buttonText='OUR MENU' background={Cocktail}/>
           </RightBox>
         </FeaturesBox>
-     
         <Rustec />
-     
-       
           <Quality />
-    
         <BookaTableBox ref={tableRef} background={BookaTable}>
           <ButtonBox ref={buttonRef}>
-            <Header variant='h3' /* style={{marginBottom: "3rem"}} */>Book a Table</Header>
+            <Header variant='h3'>Book a Table</Header>
             <ButtonSecondry onClick={handleClick}>CONTACT US</ButtonSecondry>
           </ButtonBox>
         </BookaTableBox>

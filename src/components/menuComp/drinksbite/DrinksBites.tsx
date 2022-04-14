@@ -14,7 +14,7 @@ const DrinksBites = () => {
             start: "center bottom",
         }})
 
-    })
+    }, [])
   return (
     <MainContainer >
         <ContentBox ref={ref}>

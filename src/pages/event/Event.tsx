@@ -19,7 +19,7 @@ const Event = () => {
         trigger: imageRef.current,
         start: "30% bottom",
       }})
-})
+}, [])
 
   
   return (
